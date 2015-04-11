@@ -3,6 +3,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.line {
-    font-size: 25px;
+.line.focused {
+    font-size: 20px;
+}
+
+#container {
+    text-align: left;
+}
+
+#container.centered {
+    text-align: center;
 }

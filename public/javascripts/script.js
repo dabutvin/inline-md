@@ -26,9 +26,19 @@ function addLine () {
     line.setAttribute('contenteditable', 'plaintext-only');
     line.className = 'line';
 
-    line.onfocus = function () { this.className = 'focused line'; this.editor.showMd(); };
-    line.onblur = function () { this.className = 'line'; this.editor.showHtml(); };
-    line.onkeydown = function () { this.editor.keydown(event); };
+    line.onfocus = function () {
+        this.className = 'focused line';
+        this.editor.showMd();
+    };
+
+    line.onblur = function () {
+        this.className = 'line';
+        this.editor.showHtml();
+    };
+
+    line.onkeydown = function () {
+        this.editor.keydown(event);
+    };
 
     new Editor(line);
 
