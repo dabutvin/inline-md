@@ -5,11 +5,11 @@ function Editor(input) {
 
     this.showHtml = function () {
         input.dataset.md = input.innerHTML;
-        input.innerHTML = markdown.toHTML(input.innerHTML);;
+        input.innerHTML = markdown.toHTML(input.innerText);;
     }
 
     this.keydown = function(event) {
-        if (event.which === 13) { // Enter
+        if (event.which === 13 && event.shiftKey) { // Enter + shift will give you new line
             event.preventDefault();
             addLine();
         }
@@ -32,6 +32,7 @@ function addLine () {
     };
 
     line.onblur = function () {
+        this.innerHTML = trimTrailingChars(this.innerHTML, '<br>');
         this.className = 'line';
         this.editor.showHtml();
     };
@@ -47,3 +48,10 @@ function addLine () {
 }
 
 addLine();
+
+function trimTrailingChars(s, charToTrim) {
+    var regExp = new RegExp(charToTrim + "+$");
+    var result = s.replace(regExp, "");
+
+    return result;
+}
