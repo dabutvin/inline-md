@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    div#text-input(onkeyup='this.editor.update()',contenteditable='plaintext-only') Type **Markdown** here.
+    div#preview
+    script(src='/javascripts/markdown.js')
+    script(src='/javascripts/script.js')
