@@ -14,3 +14,15 @@ body {
 #container.centered {
     text-align: center;
 }
+
+#toplinks {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+}
+
+#bottomlinks {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}

@@ -1,7 +1,23 @@
 extends layout
 
 block content
+    div#toplinks
+        div
+            input#filename(type='text', placeholder='file name')
+        div
+            a(href='/') new
+            &nbsp;
+            a(href='#', onclick='savedoc(event)') save
+            &nbsp;
+            a(href='/load') load
+            &nbsp;
+            a(href='/help') help
     div#container.markdown-body
+    div#bottomlinks
+        div
+            a(href='#', onclick='saveHtmlLocally(event)') save html file
+            &nbsp;
+            a(href='#', onclick='saveMdLocally(event)') save md file
+
     //- https://github.com/evilstreak/markdown-js
     script(src='/javascripts/markdown.js')
-    script(src='/javascripts/script.js')
